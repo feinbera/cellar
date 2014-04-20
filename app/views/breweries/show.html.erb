@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brewery.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @brewery.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @brewery.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @brewery.state %>
+</p>
+
+<p>
+  <strong>Postal:</strong>
+  <%= @brewery.postal %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @brewery.country %>
+</p>
+
+<p>
+  <strong>Beers:</strong>
+  <% if @brewery.beers.length == 0 %>None!<% end %>
+</p>
+
+<ul>
+    <% @brewery.beers.each do |beer| %>
+        <li>
+            <%= link_to beer.name, beer_path(beer) %>
+        </li>
+    <% end # /@brewery.beers.each do |beer| %>
+</ul>
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<%= link_to 'Back', breweries_path %>

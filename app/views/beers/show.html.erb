@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @beer.name %>
+</p>
+
+<p>
+  <strong>Abv:</strong>
+  <%= @beer.abv %>
+</p>
+
+<p>
+  <strong>Ibu:</strong>
+  <%= @beer.ibu %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @beer.type %>
+</p>
+
+<p>
+  <strong>Released:</strong>
+  <%= @beer.released %>
+</p>
+
+<p>
+  <strong>Best after:</strong>
+  <%= @beer.best_after %>
+</p>
+
+<p>
+  <strong>Best before:</strong>
+  <%= @beer.best_before %>
+</p>
+
+<p>
+    <strong>Brewery:</strong>
+    <% if @beer.brewery %>
+        <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %>
+    <% elsif @beer.brewery_id %>
+        Unknown brewery ID <%= @beer.brewery_id %>
+    <% else %>
+        None!
+    <% end %>
+</p>
+
+<p>
+    <strong>Style:</strong>
+    <% if @beer.style %>
+        <%= link_to @beer.style.name, style_path(@beer.style) %>
+    <% end  # /if @beer.style %>    
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @beer.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_beer_path(@beer) %> |
+<%= link_to 'Back', beers_path %>

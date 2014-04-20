@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @style.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @style.description %>
+</p>
+
+<% if @style.parent %>
+<p>
+    <strong>Parent:</strong>
+    <%= link_to @style.parent.name, style_path(@style.parent) %>
+</p>
+<% end  # /if @style.parent %>
+
+<p>
+    <strong><%= @style.children.length == 1? "Child" : "Children" %></strong>
+    <% if @style.children.length == 0 %>(none)<% end %>
+</p>
+<% if @style.children.length > 0 %>
+<ul>
+    <% @style.children.each do |childStyle| %>
+        <li>
+            <%= link_to childStyle.name, style_path(childStyle) %>
+        </li>
+    <% end  # /@style.children.each do |childStyle| %>
+</ul>
+<% end  # /if @style.children.length > 0 %>
+
+<p>
+    <strong><%= @style.beers.length == 1? "Beer" : "Beers" %></strong>
+    <% if @style.beers.length == 0 %>(none)<% end %>
+</p>
+<% if @style.beers.length > 0 %>
+<ul>
+    <% @style.beers.each do |beer| %>
+        <li>
+            <%= link_to beer.name, beer_path(beer) %>
+        </li>
+    <% end  # /@style.beers.each do |beer| %>
+</ul>
+<% end  # /if @style.beers.length > 0 %>
+
+<%= link_to 'Edit', edit_style_path(@style) %> |
+<%= link_to 'Back', styles_path %>

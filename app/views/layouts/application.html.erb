@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cellar</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="cellar-header">
+    <a href="/">Cellar</a>
+
+    <div style="float: right;">
+        <% if user_signed_in? %>
+            Welcome, <%= current_user.email %> 
+            | 
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+            Who dat?
+            <%= link_to "Sign Up", new_user_registration_path %>
+            |
+            <%= link_to "Log In", new_user_session_path %>
+        <% end %>
+    </div>
+</div>
+
+<div id="cellar-content">
+<%= yield %>
+</div>
+
+<div id="cellar-footer">
+    ...and that&rsquo;s that!
+</div>
+
+</body>
+</html>
