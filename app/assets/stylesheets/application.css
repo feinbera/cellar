@@ -40,3 +40,7 @@ p {
 #cellar-content {
     margin: 15px;
 }
+
+li {
+    margin-left: 2em;
+}
