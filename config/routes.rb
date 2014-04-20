@@ -1,4 +1,12 @@
 Cellar::Application.routes.draw do
+  resources :bottles
+
+  resources :boxes
+
+  resources :shelves
+
+  resources :beer_cellars
+
   devise_for :users
   resources :styles
 

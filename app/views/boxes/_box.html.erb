@@ -1,0 +1,25 @@
+<div class="cellar-object-box">
+<p>
+  <strong>Name:</strong>
+  <%= box.name %>
+</p>
+
+<p>
+  <strong>Flags:</strong>
+  <%= box.flags %>
+</p>
+
+<% if box.bottles.length > 0 %>
+<p>
+    <strong>Bottles:</strong>
+
+    <ul>
+        <% box.bottles.each do |bottle| %>
+            <li>
+                <%= render bottle %>
+            </li>
+        <% end # /box.bottles.each do |bottle| %>
+    </ul>
+</p>
+<% end # /if box.bottles.length > 0 %>
+</div><%#   /class="cellar-object-box" %>

@@ -1,0 +1,37 @@
+<h1>Listing bottles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Beer</th>
+      <th>Container type</th>
+      <th>Container</th>
+      <th>Acquired</th>
+      <th>Consumed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bottles.each do |bottle| %>
+      <tr>
+        <td><%= bottle.user_id %></td>
+        <td><%= bottle.beer_id %></td>
+        <td><%= bottle.container_type %></td>
+        <td><%= bottle.container_id %></td>
+        <td><%= bottle.acquired %></td>
+        <td><%= bottle.consumed %></td>
+        <td><%= link_to 'Show', bottle %></td>
+        <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
+        <td><%= link_to 'Destroy', bottle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bottle', new_bottle_path %>

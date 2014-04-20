@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @shelf %>
+
+<hr />
+
+<p>
+    <strong>Cellar:</strong>
+    <% if @shelf.beer_cellar %>
+        <%= link_to @shelf.beer_cellar.name, beer_cellar_path(@shelf.beer_cellar) %>
+    <% else %>
+        (none)
+    <% end %>
+</p>
+
+<%= link_to 'Edit', edit_shelf_path(@shelf) %> |
+<%= link_to 'Back', shelves_path %>

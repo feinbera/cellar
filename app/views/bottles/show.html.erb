@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @bottle %>
+
+<hr />
+
+<p>
+  <strong>User:</strong>
+  <%= @bottle.user_id %>
+</p>
+
+<p>
+  <strong>Container type:</strong>
+  <%= @bottle.container_type %>
+</p>
+
+<p>
+    <strong>Container:</strong>
+    <% if @bottle.container
+        if @bottle.container_type == 'BeerCellar'
+            linkPath = beer_cellar_path(@bottle.container)
+        elsif @bottle.container_type == 'Shelf'
+            linkPath = shelf_path(@bottle.container)
+        elsif @bottle.container_type == 'Box'
+            linkPath = box_path(@bottle.container)
+        end
+        %>
+        <%= link_to @bottle.container.name, linkPath %>
+    <% else %>
+        (none)
+    <% end %>
+</p>
+
+<%= link_to 'Edit', edit_bottle_path(@bottle) %> |
+<%= link_to 'Back', bottles_path %>

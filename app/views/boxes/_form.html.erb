@@ -1,0 +1,34 @@
+<%= form_for(@box) do |f| %>
+  <% if @box.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@box.errors.count, "error") %> prohibited this box from being saved:</h2>
+
+      <ul>
+      <% @box.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :container_type %><br>
+    <%= f.text_field :container_type %>
+    <%#= f.select(:container_type, [['Cellar', 1], ['Shelf', 2]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :container_id %><br>
+    <%= f.number_field :container_id %>
+  </div>
+  <div class="field">
+    <%= f.label :flags %><br>
+    <%= f.number_field :flags %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

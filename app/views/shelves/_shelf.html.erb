@@ -1,0 +1,39 @@
+<div class="cellar-object-shelf">
+<p>
+    <strong>Name:</strong>
+    <%= shelf.name %>
+</p>
+
+<p>
+    <strong>Flags:</strong>
+    <%= shelf.flags %>
+</p>
+
+<% if shelf.boxes.length > 0 %>
+<p>
+    <strong>Boxes:</strong>
+
+    <ul>
+        <% shelf.boxes.each do |box| %>
+            <li>
+                <%= render box %>
+            </li>
+        <% end # /shelf.boxes.each do |box| %>
+    </ul>
+</p>
+<% end # /if shelf.boxes.length > 0 %>
+
+<% if shelf.bottles.length > 0 %>
+<p>
+    <strong>Bottles:</strong>
+
+    <ul>
+        <% shelf.bottles.each do |bottle| %>
+            <li>
+                <%= render bottle %>
+            </li>
+        <% end # /shelf.bottles.each do |bottle| %>
+    </ul>
+</p>
+<% end # /if shelf.bottles.length > 0 %>
+</div><%# /class="cellar-object-shelf" %>

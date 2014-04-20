@@ -1,0 +1,2 @@
+module BeerCellarsHelper
+end

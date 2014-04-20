@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414001259) do
+ActiveRecord::Schema.define(version: 20140420200220) do
+
+  create_table "beer_cellars", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "flags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "beers", force: true do |t|
     t.string   "name"
@@ -26,6 +34,27 @@ ActiveRecord::Schema.define(version: 20140414001259) do
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "upc"
+  end
+
+  create_table "bottles", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "beer_id"
+    t.string   "container_type"
+    t.integer  "container_id"
+    t.date     "acquired"
+    t.date     "consumed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "boxes", force: true do |t|
+    t.string   "name"
+    t.string   "container_type"
+    t.integer  "container_id"
+    t.integer  "flags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "breweries", force: true do |t|
@@ -37,6 +66,14 @@ ActiveRecord::Schema.define(version: 20140414001259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "address"
+  end
+
+  create_table "shelves", force: true do |t|
+    t.string   "name"
+    t.integer  "beer_cellar_id"
+    t.integer  "flags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "styles", force: true do |t|

@@ -1,0 +1,22 @@
+<div class="cellar-object-bottle">
+<p>
+    <strong>Beer:</strong>
+    <% if bottle.beer %>
+        <%= link_to bottle.beer.name, beer_path(bottle.beer) %>
+    <% else %>
+        Unknown!
+    <% end %>
+</p>
+
+<!--
+<p>
+    <strong>Acquired:</strong>
+    <%= bottle.acquired %>
+</p>
+
+<p>
+    <strong>Consumed:</strong>
+    <%= bottle.consumed %>
+</p>
+-->
+</div><%#   /class="cellar-object-bottle" %>

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @beer_cellar.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @beer_cellar.user_id %>
+</p>
+
+<p>
+  <strong>Flags:</strong>
+  <%= @beer_cellar.flags %>
+</p>
+
+<p>
+    <strong><%= @beer_cellar.shelves.length == 1? 'Shelf' : 'Shelves' %></strong>
+    <% if @beer_cellar.shelves.length == 0 %>None!<% end %>
+</p>
+
+<ul>
+    <% @beer_cellar.shelves.each do |shelf| %>
+        <li>
+            <%= render shelf %>
+        </li>
+    <% end  # /@beer_cellar.shelves.each do |shelf| %>
+</ul>
+
+<p>
+    <strong><%= @beer_cellar.boxes.length == 1? 'Box' : 'Boxes' %></strong>
+    <% if @beer_cellar.boxes.length == 0 %>None!<% end %>
+</p>
+
+<ul>
+    <% @beer_cellar.boxes.each do |box| %>
+        <li>
+            <%= render box %>
+        </li>
+    <% end  # /@beer_cellar.boxes.each do |box| %>
+</ul>
+
+<p>
+    <strong><%= @beer_cellar.bottles.length == 1? 'Bottle' : 'Bottles' %></strong>
+    <% if @beer_cellar.bottles.length == 0 %>None!<% end %>
+</p>
+
+<ul>
+    <% @beer_cellar.bottles.each do |bottle| %>
+        <li>
+            <%= render bottle %>
+        </li>
+    <% end  # /@beer_cellar.bottles.each do |bottle| %>
+</ul>
+
+<%= link_to 'Edit', edit_beer_cellar_path(@beer_cellar) %> |
+<%= link_to 'Back', beer_cellars_path %>

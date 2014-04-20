@@ -1,0 +1,31 @@
+<h1>Listing beer_cellars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Flags</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beer_cellars.each do |beer_cellar| %>
+      <tr>
+        <td><%= beer_cellar.name %></td>
+        <td><%= beer_cellar.user_id %></td>
+        <td><%= beer_cellar.flags %></td>
+        <td><%= link_to 'Show', beer_cellar %></td>
+        <td><%= link_to 'Edit', edit_beer_cellar_path(beer_cellar) %></td>
+        <td><%= link_to 'Destroy', beer_cellar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beer cellar', new_beer_cellar_path %>

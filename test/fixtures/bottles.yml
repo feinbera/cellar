@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  beer_id: 1
+  container_type: 1
+  container_id: 1
+  acquired: 2014-04-20
+  consumed: 2014-04-20
+
+two:
+  user_id: 1
+  beer_id: 1
+  container_type: 1
+  container_id: 1
+  acquired: 2014-04-20
+  consumed: 2014-04-20

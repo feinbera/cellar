@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @box %>
+
+<hr />
+
+<p>
+  <strong>Container type:</strong>
+  <%= @box.container_type %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @box.container.name %>
+</p>
+
+<%= link_to 'Edit', edit_box_path(@box) %> |
+<%= link_to 'Back', boxes_path %>
